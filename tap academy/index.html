@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editech Excellence - Hithyshi K</title>
+    <style>
+        /* GLOBAL STYLES */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* 1. NAVBAR */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffc107; /* Yellow hover */
+        }
+
+        /* 2. HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        /* Stats Row */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffc107;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 3. ABOUT SECTION */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 60px 0 30px 0;
+            text-transform: uppercase;
+            color: #333;
+            border-bottom: 3px solid #ffc107;
+            display: inline-block;
+        }
+
+        .about-section {
+            background-color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* 4. PROJECTS GRID */
+        .projects-section {
+            padding: 50px 20px;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-align: left;
+            border-left: 5px solid #333; /* Default border color */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Card Colors based on project types */
+        .card-blue { border-left-color: #3498db; }
+        .card-green { border-left-color: #2ecc71; }
+        .card-purple { border-left-color: #9b59b6; }
+        .card-orange { border-left-color: #e67e22; }
+        .card-red { border-left-color: #e74c3c; }
+        .card-teal { border-left-color: #1abc9c; }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .project-number {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .tags {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .view-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .view-btn:hover {
+            background-color: #555;
+        }
+
+        /* 5. FOOTER */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .stats-container { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">Website built by Hithyshi K</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#portfolio">Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1> EDITECH EXCELLENCE</h1>
+        <p>
+            Begin your Web Development journey with the foundation of the internet.<br>
+            Learn HTML from trainer Harshith sir and build real-world projects.
+        </p>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-number">6+</span>
+                <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Pure HTML</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Possibilities</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="section-title">About The Course</div>
+        <div class="about-content">
+            <p>
+                HTML (HyperText Markup Language) is the core technology used to create and structure content on the World Wide Web. It provides a set of tags and elements that tell web browsers how to organize and display information such as headings, paragraphs, images, links, lists, tables, forms, and multimedia content. HTML was first introduced in 1991 by Tim Berners-Lee, the inventor of the web, with the simple goal of sharing scientific documents over the internet. As the web grew in popularity, HTML evolved through several versions to meet new demands, becoming more powerful and flexible. The introduction of HTML5 was a major milestone, as it added built-in support for audio, video, graphics, semantic elements, and improved accessibility, reducing the need for external plugins. Today, HTML works alongside CSS, which controls the visual design, and JavaScript, which adds interactivity, forming the foundation of modern, responsive, and user-friendly websites that power everything from personal blogs to large-scale web applications.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="section-title">My Projects</div>
+        
+        <div class="projects-grid">
+            
+            <div class="project-card card-red">
+                <span class="icon"></span>
+                <div class="project-number">PROJECT 01</div>
+                <h3 class="project-title">Multimedia Blog</h3>
+                <p class="tags">Tags: audio, iframe, image, pre, p, h1, h2, h3</p>
+                <a href="https://69844a27b0d17799ebb00b1a--singular-praline-328e00.netlify.app/" class="view-btn">View Project</a>
+            </div>
+
+            <div class="project-card card-blue">
+                <span class="icon"></span>
+                <div class="project-number">PROJECT 02</div>
+                <h3 class="project-title">Life & Skills Portfolio</h3>
+                <p class="tags">Tags: lists, links, text formatting</p>
+                <a href="https://singular-praline-328e00.netlify.app/" class="view-btn">View Project</a>
+            </div>
+
+            <div class="project-card card-purple">
+                <span class="icon"></span>
+                <div class="project-number">PROJECT 03</div>
+                <h3 class="project-title">Developer Portfolio</h3>
+                <p class="tags">Tags: header, section, footer, article</p>
+                <a href="https://melodic-gecko-4eb908.netlify.app/" class="view-btn">View Project</a>
+            </div>
+
+            <div class="project-card card-teal">
+                <span class="icon"></span>
+                <div class="project-number">PROJECT 04</div>
+                <h3 class="project-title">Course Time Table</h3>
+                <p class="tags">Tags: table, colspan, rowspan, semantic tags</p>
+                <a href="https://melodic-gecko-4eb908.netlify.app/" class="view-btn">View Project</a>
+            </div>
+
+            <div class="project-card card-orange">
+                <span class="icon"></span>
+                <div class="project-number">PROJECT 05</div>
+                <h3 class="project-title">Registration Form</h3>
+                <p class="tags">Tags: form, input, label, fieldset</p>
+                <a href="https://melodic-gecko-4eb908.netlify.app/" class="view-btn">View Project</a>
+            </div>
+
+            <div class="project-card card-green">
+                <span class="icon"></span>
+                <div class="project-number">PROJECT 06</div>
+                <h3 class="project-title">Travel Guide</h3>
+                <p class="tags">Tags: images, links, iframe, map</p>
+                <a href="https://melodic-gecko-4eb908.netlify.app/" class="view-btn">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="portfolio">
+        <p>Portfolio: <a href="https://radiant-opus-73.lovable.app/">Click Here</a></p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #777;">&copy; 2026 Hithyshi K</p>
+    </footer>
+
+</body>
+</html>

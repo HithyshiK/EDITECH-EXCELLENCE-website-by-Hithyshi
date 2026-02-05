@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Academy Timetable</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+            margin: 0;
+        }
+
+        /* Main Container Box */
+        .timetable-box {
+            border: 3px solid orange;
+            padding: 10px;
+            width: fit-content;
+            text-align: center;
+            background-color: white;
+        }
+
+        /* Title Styling */
+        .timetable-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Table Styling */
+        table {
+            border-collapse: collapse;
+            width: 800px; /* Fixed width to ensure layout matches image */
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid orange;
+            padding: 12px 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Header Row Styling */
+        th {
+            font-weight: bold;
+            color: black;
+        }
+
+        /* Lunch Break Vertical Text Alignment */
+        .lunch-break {
+            writing-mode: vertical-lr; /* Optional: makes text vertical if space is tight, though image shows horizontal */
+            /* Based on image, it's horizontal but centered */
+            writing-mode: horizontal-tb; 
+            vertical-align: middle;
+            font-weight: normal;
+        }
+
+        /* Footer Note Styling */
+        .footer-note {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* Specific Cell Widths (Optional tweaking to match image) */
+        td {
+            min-width: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="timetable-box">
+        <div class="timetable-title">JAVA FULL STACK WEB DEVELOPMENT-TAP ACADEMY</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>9-10 AM</th>
+                    <th>10-11 AM</th>
+                    <th>11-12 AM</th>
+                    <th>1-2 PM</th>
+                    <th>2-4 PM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Monday</b></td>
+                    <td>MySQL</td>
+                    <td>Java</td>
+                    <td>Softskills</td>
+                    <td rowspan="5" class="lunch-break">Lunch Break</td>
+                    <td>Mock</td>
+                </tr>
+
+                <tr>
+                    <td><b>Tuesday</b></td>
+                    <td colspan="2">Project class</td>
+                    <td>Programming</td>
+                    <td>css</td>
+                </tr>
+
+                <tr>
+                    <td><b>Wednesday</b></td>
+                    <td>HTML</td>
+                    <td>Python</td>
+                    <td>DSA</td>
+                    <td rowspan="2">Front End Project</td>
+                </tr>
+
+                <tr>
+                    <td><b>Thursday</b></td>
+                    <td>Java</td>
+                    <td>React js</td>
+                    <td></td> </tr>
+
+                <tr>
+                    <td><b>Friday</b></td>
+                    <td>Programming</td>
+                    <td>Java</td>
+                    <td>DSA</td>
+                    <td>JavaScript</td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="footer-note">NOTE:Friday 2-4 PM is optional activity slot</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

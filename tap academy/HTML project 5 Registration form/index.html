@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration Form</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-width: 800px; /* Optional: limits width */
+        }
+
+        legend {
+            font-weight: normal;
+            padding: 0 5px;
+            border: 1px solid #ccc; /* Sometimes legends in screenshots have borders */
+            /* The screenshot legend looks like plain text interrupting the border */
+            border: none;
+        }
+
+        /* Using a table for perfect alignment like the screenshot */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 5px;
+            vertical-align: middle;
+        }
+
+        /* The label column */
+        td:first-child {
+            width: 150px;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        /* The input column */
+        td:last-child {
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            padding: 3px;
+            width: 250px;
+        }
+        
+        /* Adjust width for specific inputs if needed to match image exactly */
+        input[type="date"] {
+            width: 140px;
+        }
+
+        input[type="file"] {
+            border: 1px solid #ccc;
+            padding: 2px;
+            background: #f0f0f0;
+            color: black;
+            font-size: 13px;
+        }
+
+        button {
+            padding: 3px 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #777;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Specific fix for the "Personal Details" text appearing twice */
+        .sub-header {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Course Registration Form</h1>
+    
+    <div class="sub-header">Personal Details</div>
+
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+            <table>
+                <tr>
+                    <td><label for="fname">FirstName</label></td>
+                    <td><input type="text" id="fname" placeholder="Ex:Hithyshi"></td>
+                </tr>
+                <tr>
+                    <td><label for="sname">Surname</label></td>
+                    <td><input type="text" id="sname" placeholder="Ex:K"></td>
+                </tr>
+                <tr>
+                    <td><label for="mobile">Mobile Number</label></td>
+                    <td><input type="text" id="mobile" placeholder="Ex.6363421751"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email Id</label></td>
+                    <td><input type="email" id="email" placeholder="hithyshikgowda@gmail.com"></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">Password</label></td>
+                    <td><input type="password" id="pwd"></td>
+                </tr>
+                <tr>
+                    <td><label for="cpwd">Confirm Password</label></td>
+                    <td><input type="password" id="cpwd"></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">DOB</label></td>
+                    <td><input type="date" id="dob"></td>
+                </tr>
+                <tr>
+                    <td><label for="age">Age</label></td>
+                    <td><input type="text" id="age" style="width: 50px;"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="Male" style="width:auto;"> <label for="male" style="font-weight:normal;">Male</label>
+                        <input type="radio" id="female" name="gender" value="Female" style="width:auto;"> <label for="female" style="font-weight:normal;">Female</label>
+                        <input type="radio" id="others" name="gender" value="Others" style="width:auto;"> <label for="others" style="font-weight:normal;">Others</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="country">Select counter</label></td>
+                    <td>
+                        <select id="country">
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="pic">upload picture</label></td>
+                    <td><input type="file" id="pic"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="reset">reset</button></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <div class="sub-header">Course Details</div>
+        <fieldset>
+            <legend>Course Details</legend>
+            <table>
+                <tr>
+                    <td><label for="course">Course Details</label> Select course</td>
+                    <td>
+                        <select id="course">
+                            <option value="Python Full Stack">Python Full Stack</option>
+                            <option value="Java Full Stack">Java Full Stack</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Delivery Mode</label></td>
+                    <td>
+                        <input type="checkbox" id="online" name="mode" style="width:auto;"> <label for="online" style="font-weight:normal;">online</label>
+                        <input type="checkbox" id="offline" name="mode" style="width:auto;"> <label for="offline" style="font-weight:normal;">offline</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;"><label for="comments">comments</label></td>
+                    <td><textarea id="comments" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">submit</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+</body>
+</html>
